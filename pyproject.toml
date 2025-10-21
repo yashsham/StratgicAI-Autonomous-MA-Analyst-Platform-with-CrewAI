@@ -1,0 +1,31 @@
+[project]
+name = "strategicai"
+version = "0.1.0"
+description = "strategicai using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "alpha-vantage>=3.0.0",
+    "crewai-tools>=0.76.0",
+    "crewai[tools]>=0.203.1,<1.0.0",
+    "langchain-google-genai>=3.0.0",
+    "pathlib>=1.0.1",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+    "sec-api>=1.0.32",
+    "streamlit>=1.50.0",
+]
+
+[project.scripts]
+strategicai = "strategicai.main:run"
+run_crew = "strategicai.main:run"
+train = "strategicai.main:train"
+replay = "strategicai.main:replay"
+test = "strategicai.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

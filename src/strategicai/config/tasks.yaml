@@ -1,0 +1,38 @@
+screening_task:
+  description: >
+    Analyze the company with the ticker '{ticker}'. Use the Company Overview Tool
+    and the SEC Filings Search Tool. Summarize the company's business, identify
+    one major strength and one major weakness.
+  expected_output: >
+    A JSON object containing a 'recommendation' ('Go' or 'No-Go') and a 'justification' sentence.
+  agent: company_screener
+
+financial_analysis_task:
+  description: >
+    Conduct a thorough financial analysis of the company with the ticker '{ticker}'.
+    Use the SEC Filings Search Tool to find and review the latest 10-K report.
+    From the report, calculate key metrics: revenue growth, profit margin, debt-to-equity ratio.
+  expected_output: >
+    A detailed report presenting the calculated metrics and a summary of financial risks.
+  agent: financial_analyst
+
+market_analysis_task:
+  description: >
+    Conduct a market analysis for the company with the ticker '{ticker}'.
+    Investigate industry trends, competitors, and unique selling propositions.
+  expected_output: >
+    A report detailing trends, top competitors, and competitive advantages.
+  agent: market_analyst
+
+synthesis_task:
+  description: >
+    Synthesize the financial and market analyses into a single investment thesis.
+    Present a clear 'for' or 'against' argument for acquisition.
+  expected_output: >
+    A 4-paragraph investment thesis including summary, findings, and recommendation.
+  agent: report_synthesizer
+  context:
+    - financial_analysis_task
+    - market_analysis_task
+
+

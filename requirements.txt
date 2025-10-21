@@ -1,0 +1,9 @@
+crewai
+requests
+sec-api
+alpha-vantage
+crewai-tools
+langchain-google-genai
+streamlit 
+pyyaml
+pathlib
